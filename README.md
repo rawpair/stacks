@@ -1,10 +1,53 @@
 # RawPair Stacks
 
-This repo contains official Docker images for supported RawPair programming environments.
+This repository provides official Docker images for development environments used with [RawPair](https://github.com/rawpair/rawpair). These stacks are designed for **collaborative, short-lived sessions**—where convenience matters more than minimalism.
 
-Each directory defines a language stack with the tools needed for live shared terminal sessions.
+Each image includes:
+- A **full toolchain** for a specific language (e.g., Elixir, Ada, Prolog)
+- **Sane defaults** and ready-to-use configuration
+- Everything needed to get started without manual setup
 
-> These stacks are **not** part of RawPair's core infrastructure. They're sandboxed environments used inside terminal sessions.
+These images are intended for **ephemeral, sandboxed sessions**, not public-facing or production deployments.
+
+They prioritize **developer convenience** over strict hardening: full toolchains, common tools pre-installed, minimal setup required.  
+This makes them ideal for short-lived environments where speed and simplicity matter most—like live coding, pair programming, or onboarding sessions.
+
+They are **not security-hardened** for internet exposure or long-term persistence, and we strongly recommend against using them outside controlled environments.
+
+---
+
+## Required Components
+
+To integrate properly with RawPair, each container **must include**:
+
+- `bash` — shell consistency
+- `tmux` — terminal multiplexing
+- `supervisor` — process management
+- `vector` — log streaming to the host
+- `ttyd` — exposes the terminal over HTTP
+
+These enable RawPair's real-time terminal access, session orchestration, and logging. Without them, your container **will not function correctly** inside the system.
+
+---
+
+## Required Config Files
+
+Each image must also include three configuration files:
+
+- `supervisord.conf`
+- `ttyd-wrapper.sh`
+- `vector.toml`
+
+These are provided in the [docker/](https://github.com/rawpair/rawpair/tree/main/docker) folder of the main repo. You should copy them into your image during the build process.
+
+---
+
+## 💡 Customizing Stacks
+
+You’re free to build your own stacks, but make sure to keep the required components.  
+In short: **build your own, but build smart.**
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for how to add new stacks.
 
 ## Supported Tech Stacks
 
@@ -36,6 +79,3 @@ Each Dockerfile is intended to be used by RawPair internally. You can also test 
 docker build -t rawpair/elixir ./stacks/elixir
 ```
 
-## Contributing
-
-Want to add a new stack? Check out [CONTRIBUTING.md](./CONTRIBUTING.md)
