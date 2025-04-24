@@ -47,8 +47,6 @@ These are provided in the [docker/](https://github.com/rawpair/rawpair/tree/main
 You’re free to build your own stacks, but make sure to keep the required components.  
 In short: **build your own, but build smart.**
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for how to add new stacks.
-
 ## Supported Tech Stacks
 
 | Stack                                                    | Docker Repository                                                                     | Notes                                          |
@@ -75,7 +73,17 @@ Can't see your favourite stack? Submit a PR or create an issue.
 ## Usage
 Each Dockerfile is intended to be used by RawPair internally. You can also test them standalone:
 
+Generates list of all possible permutations:
+
 ```bash
-docker build -t rawpair/elixir ./stacks/elixir
+cd stacks
+./build-images.sh --dry-run
+```
+
+Generates Elixir images:
+
+```bash
+cd stacks
+./build-images.sh --filter=elixir
 ```
 
