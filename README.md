@@ -49,6 +49,8 @@ In short: **build your own, but build smart.**
 
 ## Supported Tech Stacks
 
+The majority of the Docker images in this repo are available on https://hub.docker.com/u/rawpair
+
 | Stack                                                    | Docker Repository                                                                     | Notes                                          |
 |----------------------------------------------------------|---------------------------------------------------------------------------------------|------------------------------------------------|
 | **[Ada](https://www.gnu.org/software/gnat/)**            | [rawpair/ada](https://hub.docker.com/repository/docker/rawpair/ada)                   | Includes GNU GNAT                              |
