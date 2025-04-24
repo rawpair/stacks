@@ -75,17 +75,24 @@ Can't see your favourite stack? Submit a PR or create an issue.
 ## Usage
 Each Dockerfile is intended to be used by RawPair internally. You can also test them standalone:
 
-Generates list of all possible permutations:
+### Render list of all possible permutations:
 
 ```bash
 cd stacks
 ./build-images.sh --dry-run
 ```
 
-Generates Elixir images:
+### Example: generating Elixir images
 
 ```bash
 cd stacks
 ./build-images.sh --filter=elixir
 ```
 
+### Generating multi-arch image
+
+`docker buildx create --use --name rawpair-builder --driver docker-container`
+
+`docker buildx inspect rawpair-builder --bootstrap`
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/elixir:bookworm -f ./elixir/bookworm/Dockerfile --push .`
