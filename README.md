@@ -89,10 +89,90 @@ cd stacks
 ./build-images.sh --filter=elixir
 ```
 
-### Generating multi-arch image
+### Generating multi-arch images
+
+Some Docker images support multi-arch. Follow these instructions to get started:
 
 `docker buildx create --use --name rawpair-builder --driver docker-container`
 
 `docker buildx inspect rawpair-builder --bootstrap`
 
+`cd stacks` 
+
+#### Ada (GNAT)
+
+##### Debian Bookworm
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/ada:bookworm -f ./ada/bookworm/Dockerfile --push .`
+
+##### Debian Trixie
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/ada:trixie -f ./ada/trixie/Dockerfile --push .`
+
+#### Clojure
+
+##### Temurin 21 - Debian Bookworm
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/clojure:temurin-21-bookworm -f ./clojure/clojure:temurin-21-bookworm/Dockerfile --push .`
+
+##### Temurin 22 - Debian Bookworm
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/clojure:temurin-22-bookworm -f ./clojure/clojure:temurin-22-bookworm/Dockerfile --push .`
+
+##### Temurin 23 - Debian Bookworm
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/clojure:temurin-23-bookworm -f ./clojure/clojure:temurin-23-bookworm/Dockerfile --push .`
+
+##### Temurin 24 - Debian Bookworm
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/clojure:temurin-24-bookworm -f ./clojure/clojure:temurin-24-bookworm/Dockerfile --push .`
+
+#### Elixir
+
 `docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/elixir:bookworm -f ./elixir/bookworm/Dockerfile --push .`
+
+#### GNU COBOL
+
+##### Debian Bookworm
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/gnucobol:bookworm -f ./gnucobol/bookworm/Dockerfile --push .`
+
+##### Debian Trixie
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/gnucobol:trixie -f ./gnucobol/trixie/Dockerfile --push .`
+
+#### Haskell
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/haskell:trixie -f ./haskell/trixie/Dockerfile --push .`
+
+#### Julia
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/julia:trixie -f ./julia/trixie/Dockerfile --push .`
+
+#### Node
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/node:trixie -f ./node/trixie/Dockerfile --push .`
+
+#### PHP
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/php:trixie -f ./php/trixie/Dockerfile --push .`
+
+#### Python
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/python:trixie -f ./python/trixie/Dockerfile --push .`
+
+#### Ruby
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/ruby:trixie -f ./ruby/trixie/Dockerfile --push .`
+
+#### Rust
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/rust:trixie -f ./rust/trixie/Dockerfile --push .`
+
+#### Steel Bank Common Lisp
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/sbcl:trixie -f ./sbcl/trixie/Dockerfile --push .`
+
+### Generating images through background jobs
+
+Wrap the command with `nohup <command> > build.log 2>&1 &`.
