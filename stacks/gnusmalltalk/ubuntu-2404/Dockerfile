@@ -65,7 +65,8 @@ WORKDIR /usr/src/smalltalk
 
 RUN autoreconf --install --force
 RUN ./configure --prefix=/opt/smalltalk
-RUN make -j$(nproc)
+# Serialize make step as it tends to fail on arm64 otherwise
+RUN make -j1
 RUN make install
 
 ENV PATH="/opt/smalltalk/bin:$PATH"

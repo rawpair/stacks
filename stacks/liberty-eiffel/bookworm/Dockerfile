@@ -90,13 +90,11 @@ WORKDIR /home/devuser/
 
 RUN git clone https://github.com/LibertyEiffel/Liberty
 
-# RUN wget https://download.savannah.gnu.org/releases/liberty-eiffel/bell.tar.gz
-# RUN tar -zxf /home/devuser/bell.tar.gz
-
-# WORKDIR /home/devuser/bell
 WORKDIR /home/devuser/Liberty
 RUN ./install.sh
 
 ENV PATH="/home/devuser/Liberty/target/bin:$PATH"
+
+WORKDIR /home/devuser/app
 
 CMD ["supervisord", "-c", "/etc/supervisor/conf.d/rawpair.conf"]

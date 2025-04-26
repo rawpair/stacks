@@ -91,9 +91,17 @@ cd stacks
 
 ### Generating multi-arch images
 
-Some Docker images support multi-arch. Follow these instructions to get started:
+Some Docker images support multi-arch. Although dockerx can build arm64 images via QEMU, this is not recommended as it is painfully slow. Instead, we recommend getting hold of a Raspberry Pi or an ARM server.
 
-`docker buildx create --use --name rawpair-builder --driver docker-container`
+Assuming the main docker node is amd64 arch:
+
+`docker buildx create --name multiarch --use --platform linux/amd64`
+
+Optionally append arm64 remote builder:
+
+`docker buildx create --append --name multiarch --platform linux/arm64 arm-vps`
+
+Inspect:
 
 `docker buildx inspect rawpair-builder --bootstrap`
 
@@ -127,7 +135,7 @@ Some Docker images support multi-arch. Follow these instructions to get started:
 
 `docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/clojure:temurin-24-bookworm -f ./clojure/clojure:temurin-24-bookworm/Dockerfile --push .`
 
-#### Elixir
+#### Elixir - Debian Bookworm
 
 `docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/elixir:bookworm -f ./elixir/bookworm/Dockerfile --push .`
 
@@ -141,35 +149,47 @@ Some Docker images support multi-arch. Follow these instructions to get started:
 
 `docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/gnucobol:trixie -f ./gnucobol/trixie/Dockerfile --push .`
 
-#### Haskell
+#### GNU Smalltalk - Ubuntu 24.04
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/gnusmalltalk:trixie -f ./gnusmalltalk/trixie/Dockerfile --push .`
+
+#### Haskell - Debian Trixie
 
 `docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/haskell:trixie -f ./haskell/trixie/Dockerfile --push .`
 
-#### Julia
+#### Julia - Debian Trixie
 
 `docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/julia:trixie -f ./julia/trixie/Dockerfile --push .`
 
-#### Node
+#### Liberty Eiffel - Debian Bookworm
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/liberty-eiffel:bookworm -f ./liberty-eiffel/bookworm/Dockerfile --push .`
+
+#### Node - Debian Trixie
 
 `docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/node:trixie -f ./node/trixie/Dockerfile --push .`
 
-#### PHP
+#### OCaml - Ubuntu 24.04
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/ocaml:ubuntu-2404 -f ./ocaml/ubuntu-2404/Dockerfile --push .`
+
+#### PHP - Debian Trixie
 
 `docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/php:trixie -f ./php/trixie/Dockerfile --push .`
 
-#### Python
+#### Python - Debian Trixie
 
 `docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/python:trixie -f ./python/trixie/Dockerfile --push .`
 
-#### Ruby
+#### Ruby - Debian Trixie
 
 `docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/ruby:trixie -f ./ruby/trixie/Dockerfile --push .`
 
-#### Rust
+#### Rust - Debian Trixie
 
 `docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/rust:trixie -f ./rust/trixie/Dockerfile --push .`
 
-#### Steel Bank Common Lisp
+#### Steel Bank Common Lisp - Debian Trixie
 
 `docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/sbcl:trixie -f ./sbcl/trixie/Dockerfile --push .`
 

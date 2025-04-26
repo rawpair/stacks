@@ -1,0 +1,323 @@
+[
+    {
+        "name": "Ada (GNAT)",
+        "tags": [
+            {
+                "id": "ada:bookworm",
+                "base": "debian:bookworm-slim",
+                "name": "Ada (GNAT) on Debian Bookworm",
+                "multiArch": true,
+                "archs": [
+                    "amd64",
+                    "arm64"
+                ]
+            },
+            {
+                "id": "ada:trixie",
+                "base": "debian:trixie-slim",
+                "name": "Ada (GNAT) on Debian Trixie",
+                "multiArch": true,
+                "archs": [
+                    "amd64",
+                    "arm64"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Clojure",
+        "tags": [
+            {
+                "id": "clojure:temurin-21-bookworm",
+                "base": "clojure:temurin-21-tools-deps-bookworm",
+                "name": "Clojure Temurin 21 on Debian Bookworm",
+                "multiArch": true,
+                "archs": [
+                    "amd64",
+                    "arm64"
+                ]
+            },
+            {
+                "id": "clojure:temurin-22-bookworm",
+                "base": "clojure:temurin-22-tools-deps-bookworm",
+                "name": "Clojure Temurin 22 on Debian Bookworm",
+                "multiArch": true,
+                "archs": [
+                    "amd64",
+                    "arm64"
+                ]
+            },
+            {
+                "id": "clojure:temurin-23-bookworm",
+                "base": "clojure:temurin-23-tools-deps-bookworm",
+                "name": "Clojure Temurin 23 on Debian Bookworm",
+                "multiArch": true,
+                "archs": [
+                    "amd64",
+                    "arm64"
+                ]
+            },
+            {
+                "id": "clojure:temurin-24-bookworm",
+                "base": "clojure:temurin-24-tools-deps-bookworm",
+                "name": "Clojure Temurin 24 on Debian Bookworm",
+                "multiArch": true,
+                "archs": [
+                    "amd64",
+                    "arm64"
+                ]
+            }
+        ]
+    },
+    {
+        "name": ".NET",
+        "tags": [
+            {
+                "id": "dotnet:sdk9-bookworm",
+                "base": "mcr.microsoft.com/dotnet/sdk:9.0.203-bookworm-slim-amd64",
+                "name": ".NET SDK 9 on Debian Bookworm",
+                "multiArch": false,
+                "arch": "amd64"
+            },
+            {
+                "id": "dotnet:sdk9-bookworm-arm64",
+                "base": "mcr.microsoft.com/dotnet/sdk:9.0.203-bookworm-slim-arm64v8",
+                "name": ".NET SDK 9 on Debian Bookworm",
+                "multiArch": false,
+                "arch": "amd64"
+            }
+        ]
+    },
+    {
+        "name": "Elixir",
+        "tags": [
+            {
+                "id": "elixir:bookworm",
+                "base": "elixir:1.18.3",
+                "name": "Erlang+Elixir on Debian Bookworm",
+                "multiArch": true,
+                "archs": [
+                    "amd64",
+                    "arm64"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "GNU COBOL",
+        "tags": [
+            {
+                "id": "gnucobol:bookworm",
+                "base": "debian:bookworm-slim",
+                "name": "GNU COBOL on Debian Bookworm",
+                "multiArch": true,
+                "archs": [
+                    "amd64",
+                    "arm64"
+                ]
+            },
+            {
+                "id": "gnucobol:trixie",
+                "base": "debian:trixie-slim",
+                "name": "GNU COBOL on Debian Trixie",
+                "multiArch": true,
+                "archs": [
+                    "amd64",
+                    "arm64"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "GNU Smalltalk",
+        "tags": [
+            {
+                "id": "gnusmalltalk:trixie",
+                "base": "ubuntu:24.04",
+                "name": "GNU Smalltalk on Debian Trixie",
+                "multiArch": true,
+                "archs": [
+                    "amd64",
+                    "arm64"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Haskell",
+        "tags": [
+            {
+                "id": "haskell:trixie",
+                "base": "debian:trixie-slim",
+                "name": "Haskell on Debian Trixie",
+                "multiArch": true,
+                "archs": [
+                    "amd64",
+                    "arm64"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Julia",
+        "tags": [
+            {
+                "id": "julia:trixie",
+                "base": "debian:trixie-slim",
+                "name": "Julia on Debian Trixie",
+                "multiArch": true,
+                "archs": [
+                    "amd64",
+                    "arm64"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Liberty Eiffel",
+        "tags": [
+            {
+                "id": "liberty-eiffel:bookworm",
+                "base": "debian:bookworm",
+                "name": "Liberty Eiffel on Debian Bookworm",
+                "multiArch": true,
+                "archs": [
+                    "amd64",
+                    "arm64"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Node",
+        "tags": [
+            {
+                "id": "node:trixie",
+                "base": "debian:trixie-slim",
+                "name": "Node on Debian Trixie",
+                "multiArch": true,
+                "archs": [
+                    "amd64",
+                    "arm64"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Node",
+        "tags": [
+            {
+                "id": "node:trixie",
+                "base": "debian:trixie-slim",
+                "name": "Node on Debian Trixie",
+                "multiArch": true,
+                "archs": [
+                    "amd64",
+                    "arm64"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "OCaml",
+        "tags": [
+            {
+                "id": "ocaml:ubuntu-2404",
+                "base": "ubuntu:24.04",
+                "name": "OCaml on Ubuntu 24.04",
+                "multiArch": true,
+                "archs": [
+                    "amd64",
+                    "arm64"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "PHP",
+        "tags": [
+            {
+                "id": "php:trixie",
+                "base": "debian:trixie-slim",
+                "name": "PHP 8.0/8.1/8.2/8.3 on Debian Trixie",
+                "multiArch": true,
+                "archs": [
+                    "amd64",
+                    "arm64"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Python",
+        "tags": [
+            {
+                "id": "python:trixie",
+                "base": "debian:trixie-slim",
+                "name": "Python on Debian Trixie",
+                "multiArch": true,
+                "archs": [
+                    "amd64",
+                    "arm64"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Python (NVIDIA/CUDA)",
+        "tags": [
+            {
+                "id": "python:trixie",
+                "base": "nvidia/cuda:12.8.1-cudnn-devel-ubuntu24.04",
+                "name": "Python (NVIDIA/CUDA) on Ubuntu 24.04",
+                "multiArch": false,
+                "arch": "amd64"
+            }
+        ]
+    },
+    {
+        "name": "Ruby",
+        "tags": [
+            {
+                "id": "ruby:trixie",
+                "base": "debian:trixie-slim",
+                "name": "Ruby on Debian Trixie",
+                "multiArch": true,
+                "archs": [
+                    "amd64",
+                    "arm64"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Rust",
+        "tags": [
+            {
+                "id": "rust:trixie",
+                "base": "debian:trixie-slim",
+                "name": "Rust on Debian Trixie",
+                "multiArch": true,
+                "archs": [
+                    "amd64",
+                    "arm64"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Steel Bank Common Lisp",
+        "tags": [
+            {
+                "id": "sbcl:trixie",
+                "base": "debian:trixie-slim",
+                "name": "Steel Bank Common Lisp on Debian Trixie",
+                "multiArch": true,
+                "archs": [
+                    "amd64",
+                    "arm64"
+                ]
+            }
+        ]
+    }
+]
