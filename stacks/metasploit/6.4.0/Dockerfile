@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: MPL-2.0
 
 FROM metasploitframework/metasploit-framework:6.4.0
+ENTRYPOINT []
 
 USER root
 
