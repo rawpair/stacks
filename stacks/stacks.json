@@ -178,6 +178,20 @@
         ]
     },
     {
+        "name": "Metasploit",
+        "tags": [
+            {
+                "id": "metasploit:6.4.0",
+                "base": "metasploitframework/metasploit-framework:6.4.0",
+                "name": "Metasploit Framework 6.4.0 on Alpine",
+                "platforms": [
+                    "linux/amd64",
+                    "linux/arm64"
+                ]
+            }
+        ]
+    },
+    {
         "name": "Node",
         "tags": [
             {

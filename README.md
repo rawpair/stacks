@@ -61,6 +61,7 @@ The majority of the Docker images in this repo are available on https://hub.dock
 | **[Julia](https://julialang.org/)**                      | [rawpair/julia](https://hub.docker.com/repository/docker/rawpair/julia)               |                                                |
 | **[.NET](https://dotnet.microsoft.com/)**                | [rawpair/dotnet](https://hub.docker.com/repository/docker/rawpair/dotnet)             | Includes C#, F#, VB.NET, Mono                  |
 | **[Liberty Eiffel](https://www.liberty-eiffel.org/)**    | [rawpair/liberty-eiffel](https://hub.docker.com/repository/docker/rawpair/liberty-eiffel) | Compiled from [source](https://github.com/LibertyEiffel/Liberty) |
+| **[Metasploit](https://www.metasploit.com/)**            | [rawpair/metasploit](https://hub.docker.com/repository/docker/rawpair/metasploit)     | Metasploit Framework                           |
 | **[Node.js](https://nodejs.org/)**                       | [rawpair/node](https://hub.docker.com/repository/docker/rawpair/node)                 | Managed via NVM                                |
 | **[OCaml](https://ocaml.org/)**                          | [rawpair/ocaml](https://hub.docker.com/repository/docker/rawpair/ocaml)               | Includes OPAM, OCaml 4.14.1, Dune, Menhir      |
 | **[PHP](https://www.php.net/)**                          | [rawpair-php](https://hub.docker.com/repository/docker/rawpair/php)                   | Includes FPM/CLI; PHP 8.0–8.3                  |
@@ -164,6 +165,10 @@ Inspect:
 #### Liberty Eiffel - Debian Bookworm
 
 `docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/liberty-eiffel:bookworm -f ./liberty-eiffel/bookworm/Dockerfile --push .`
+
+#### Metasploit Framework - 6.4.0
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/metasploit:6.4.0 -f ./metasploit/6.4.0/Dockerfile --push .`
 
 #### Node - Debian Trixie
 
