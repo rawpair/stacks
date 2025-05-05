@@ -2,6 +2,8 @@
 
 FROM debian:trixie-slim
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 # Base setup
 RUN apt-get update && apt-get install -y --no-install-recommends \
     make \
@@ -33,7 +35,6 @@ RUN tar -xf nim-${NIM_VERSION}.tar.xz
 
 WORKDIR /opt/nim-${NIM_VERSION}
 
-RUN ls -al
 RUN sh build.sh
 RUN bin/nim c koch
 RUN ./koch boot -d:release
