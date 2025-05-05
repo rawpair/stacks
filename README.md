@@ -70,6 +70,7 @@ The majority of the Docker images in this repo are available on https://hub.dock
 | **[Rust](https://www.rust-lang.org/)**                   | [rawpair/rust](https://hub.docker.com/repository/docker/rawpair/rust)                 |                                                |
 | **[Smalltalk](https://www.gnu.org/software/smalltalk/)** | [rawpair/gnusmalltalk](https://hub.docker.com/repository/docker/rawpair/gnusmalltalk) | Includes GNU Smalltalk                         |
 | **[Steel Bank Common Lisp](https://www.sbcl.org/)**      | [rawpair/sbcl](https://hub.docker.com/repository/docker/rawpair/sbcl)                 | Includes SBCL and Quicklisp                    |
+| **[Zig](http://ziglang.org/)**                           | [rawpair/zig](https://hub.docker.com/repository/docker/rawpair/zig)                   |                                                |
 
 Can't see your favourite stack? Submit a PR or create an issue.
 
@@ -197,6 +198,10 @@ Inspect:
 #### Steel Bank Common Lisp - Debian Trixie
 
 `docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/sbcl:trixie -f ./sbcl/trixie/Dockerfile --push .`
+
+#### Zig - Debian Bookworm
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/zig:bookworm -f ./zig/bookworm/Dockerfile --push .`
 
 ### Generating images through background jobs
 

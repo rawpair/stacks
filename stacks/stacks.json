@@ -301,5 +301,19 @@
                 ]
             }
         ]
+    },
+    {
+        "name": "Zig",
+        "tags": [
+            {
+                "id": "zig:bookworm",
+                "base": "debian:bookworm-slim",
+                "name": "Zig on Debian Bookworm",
+                "platforms": [
+                    "linux/amd64",
+                    "linux/arm64"
+                ]
+            }
+        ]
     }
 ]
