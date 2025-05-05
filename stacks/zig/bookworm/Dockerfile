@@ -30,7 +30,7 @@ RUN set -eux; \
         x86_64)   ZIG_ARCH="x86_64" ;; \
         aarch64)  ZIG_ARCH="aarch64" ;; \
         armv7l)   ZIG_ARCH="armv7a" ;; \
-        *)        echo "Unsupported architecture: $ZIG_ARCH" >&2; exit 1 ;; \
+        *)        echo "Unsupported architecture: $ARCH" >&2; exit 1 ;; \
     esac; \
     curl -L "https://ziglang.org/download/${ZIG_VERSION}/zig-linux-${ZIG_ARCH}-${ZIG_VERSION}.tar.xz" -o zig.tar.xz; \
     tar -xf zig.tar.xz && \
