@@ -150,6 +150,20 @@
         ]
     },
     {
+        "name": "Janet",
+        "tags": [
+            {
+                "id": "janet:bookworm",
+                "base": "debian:trixie-slim",
+                "name": "Julia on Debian Trixie",
+                "platforms": [
+                    "linux/amd64",
+                    "linux/arm64"
+                ]
+            }
+        ]
+    },
+    {
         "name": "Julia",
         "tags": [
             {

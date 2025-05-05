@@ -58,6 +58,7 @@ The majority of the Docker images in this repo are available on https://hub.dock
 | **[COBOL](https://gnucobol.sourceforge.io/)**            | [rawpair/gnucobol](https://hub.docker.com/repository/docker/rawpair/gnucobol)         | Includes GNU COBOL                             |
 | **[Elixir](https://elixir-lang.org/)**                   | [rawpair/elixir](https://hub.docker.com/repository/docker/rawpair/elixir)             |                                                |
 | **[Haskell](https://www.haskell.org/)**                  | [rawpair/haskell](https://hub.docker.com/repository/docker/rawpair/haskell)           | Includes GHC                                   |
+| **[Janet](https://janet-lang.org/)**                     | [rawpair/janet](https://hub.docker.com/repository/docker/rawpair/janet)               |                                                |
 | **[Julia](https://julialang.org/)**                      | [rawpair/julia](https://hub.docker.com/repository/docker/rawpair/julia)               |                                                |
 | **[.NET](https://dotnet.microsoft.com/)**                | [rawpair/dotnet](https://hub.docker.com/repository/docker/rawpair/dotnet)             | Includes C#, F#, VB.NET, Mono                  |
 | **[Liberty Eiffel](https://www.liberty-eiffel.org/)**    | [rawpair/liberty-eiffel](https://hub.docker.com/repository/docker/rawpair/liberty-eiffel) | Compiled from [source](https://github.com/LibertyEiffel/Liberty) |
@@ -159,6 +160,10 @@ Inspect:
 #### Haskell - Debian Trixie
 
 `docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/haskell:trixie -f ./haskell/trixie/Dockerfile --push .`
+
+#### Janet - Debian Bookworm
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/janet:bookworm -f ./janet/bookworm/Dockerfile --push .`
 
 #### Julia - Debian Trixie
 
