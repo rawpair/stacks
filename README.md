@@ -198,6 +198,10 @@ Inspect:
 
 `docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/sbcl:trixie -f ./sbcl/trixie/Dockerfile --push .`
 
+#### Zig - Debian Bookworm
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/zig:bookworm -f ./zig/bookworm/Dockerfile --push .`
+
 ### Generating images through background jobs
 
 Wrap the command with `nohup <command> > build.log 2>&1 &`.
