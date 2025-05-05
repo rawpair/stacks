@@ -62,6 +62,7 @@ The majority of the Docker images in this repo are available on https://hub.dock
 | **[.NET](https://dotnet.microsoft.com/)**                | [rawpair/dotnet](https://hub.docker.com/repository/docker/rawpair/dotnet)             | Includes C#, F#, VB.NET, Mono                  |
 | **[Liberty Eiffel](https://www.liberty-eiffel.org/)**    | [rawpair/liberty-eiffel](https://hub.docker.com/repository/docker/rawpair/liberty-eiffel) | Compiled from [source](https://github.com/LibertyEiffel/Liberty) |
 | **[Metasploit](https://www.metasploit.com/)**            | [rawpair/metasploit](https://hub.docker.com/repository/docker/rawpair/metasploit)     | Metasploit Framework                           |
+| **[Nim](https://nim-lang.org/)**                         | [rawpair/nim](https://hub.docker.com/repository/docker/rawpair/nim)                   | Includes nimble                                |
 | **[Node.js](https://nodejs.org/)**                       | [rawpair/node](https://hub.docker.com/repository/docker/rawpair/node)                 | Managed via NVM                                |
 | **[OCaml](https://ocaml.org/)**                          | [rawpair/ocaml](https://hub.docker.com/repository/docker/rawpair/ocaml)               | Includes OPAM, OCaml 4.14.1, Dune, Menhir      |
 | **[PHP](https://www.php.net/)**                          | [rawpair-php](https://hub.docker.com/repository/docker/rawpair/php)                   | Includes FPM/CLI; PHP 8.0–8.3                  |
@@ -170,6 +171,10 @@ Inspect:
 #### Metasploit Framework - 6.4.0
 
 `docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/metasploit:6.4.0 -f ./metasploit/6.4.0/Dockerfile --push .`
+
+#### Nim - Debian Trixie
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/nim:trixie -f ./nim/trixie/Dockerfile --push .`
 
 #### Node - Debian Trixie
 
