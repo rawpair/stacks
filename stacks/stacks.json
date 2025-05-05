@@ -154,8 +154,8 @@
         "tags": [
             {
                 "id": "janet:bookworm",
-                "base": "debian:trixie-slim",
-                "name": "Julia on Debian Trixie",
+                "base": "debian:bookworm-slim",
+                "name": "Julia on Debian Bookworm",
                 "platforms": [
                     "linux/amd64",
                     "linux/arm64"
