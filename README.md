@@ -70,7 +70,7 @@ The majority of the Docker images in this repo are available on https://hub.dock
 | **[Nim](https://nim-lang.org/)**                         | [rawpair/nim](https://hub.docker.com/repository/docker/rawpair/nim)                   | Includes nimble                                |
 | **[Node.js](https://nodejs.org/)**                       | [rawpair/node](https://hub.docker.com/repository/docker/rawpair/node)                 | Managed via NVM                                |
 | **[OCaml](https://ocaml.org/)**                          | [rawpair/ocaml](https://hub.docker.com/repository/docker/rawpair/ocaml)               | Includes OPAM, OCaml 4.14.1, Dune, Menhir      |
-| **[PHP](https://www.php.net/)**                          | [rawpair-php](https://hub.docker.com/repository/docker/rawpair/php)                   | Includes FPM/CLI; PHP 8.0–8.3                  |
+| **[PHP](https://www.php.net/)**                          | [rawpair/php](https://hub.docker.com/repository/docker/rawpair/php)                   | Includes FPM/CLI; PHP 8.0–8.3                  |
 | **[Python](https://www.python.org/)**                    | [rawpair/python](https://hub.docker.com/repository/docker/rawpair/python)             | 2 base images available: Trixie; NVIDIA CUDA   |
 | **[Racket](https://racket-lang.org/)**                   | [rawpair/racket](https://hub.docker.com/repository/docker/rawpair/racket)             |                                                |
 | **[Ruby](https://www.ruby-lang.org/en/)**                | [rawpair/ruby](https://hub.docker.com/repository/docker/rawpair/ruby)                 |                                                |
