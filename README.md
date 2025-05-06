@@ -54,15 +54,19 @@ The majority of the Docker images in this repo are available on https://hub.dock
 | Stack                                                    | Docker Repository                                                                     | Notes                                          |
 |----------------------------------------------------------|---------------------------------------------------------------------------------------|------------------------------------------------|
 | **[Ada](https://www.gnu.org/software/gnat/)**            | [rawpair/ada](https://hub.docker.com/repository/docker/rawpair/ada)                   | Includes GNU GNAT                              |
+| **[Chicken Scheme](https://www.call-cc.org/)**           | [rawpair/chicken-scheme](https://hub.docker.com/repository/docker/rawpair/chicken-scheme) |                                            |
 | **[Clojure](https://clojure.org/)**                      | [rawpair/clojure](https://hub.docker.com/repository/docker/rawpair/clojure)           | Runs on Temurin (OpenJDK)                      |
 | **[COBOL](https://gnucobol.sourceforge.io/)**            | [rawpair/gnucobol](https://hub.docker.com/repository/docker/rawpair/gnucobol)         | Includes GNU COBOL                             |
 | **[Elixir](https://elixir-lang.org/)**                   | [rawpair/elixir](https://hub.docker.com/repository/docker/rawpair/elixir)             |                                                |
+| **[Gambit Scheme](https://gambitscheme.org/)**           | [rawpair/gambit-scheme](https://hub.docker.com/repository/docker/rawpair/gambit-scheme) |                                             |
+| **[Guile](https://www.gnu.org/software/guile/)**         | [rawpair/gnuguile](https://hub.docker.com/repository/docker/rawpair/gnuguile)         |                                                |
 | **[Haskell](https://www.haskell.org/)**                  | [rawpair/haskell](https://hub.docker.com/repository/docker/rawpair/haskell)           | Includes GHC                                   |
 | **[Janet](https://janet-lang.org/)**                     | [rawpair/janet](https://hub.docker.com/repository/docker/rawpair/janet)               |                                                |
 | **[Julia](https://julialang.org/)**                      | [rawpair/julia](https://hub.docker.com/repository/docker/rawpair/julia)               |                                                |
 | **[.NET](https://dotnet.microsoft.com/)**                | [rawpair/dotnet](https://hub.docker.com/repository/docker/rawpair/dotnet)             | Includes C#, F#, VB.NET, Mono                  |
 | **[Liberty Eiffel](https://www.liberty-eiffel.org/)**    | [rawpair/liberty-eiffel](https://hub.docker.com/repository/docker/rawpair/liberty-eiffel) | Compiled from [source](https://github.com/LibertyEiffel/Liberty) |
 | **[Metasploit](https://www.metasploit.com/)**            | [rawpair/metasploit](https://hub.docker.com/repository/docker/rawpair/metasploit)     | Metasploit Framework                           |
+| **[MIT/GNU Scheme](https://www.gnu.org/software/mit-gnu-scheme/)** | [rawpair/mit-gnu-scheme](https://hub.docker.com/repository/docker/rawpair/mit-gnu-scheme) |                                  |
 | **[Nim](https://nim-lang.org/)**                         | [rawpair/nim](https://hub.docker.com/repository/docker/rawpair/nim)                   | Includes nimble                                |
 | **[Node.js](https://nodejs.org/)**                       | [rawpair/node](https://hub.docker.com/repository/docker/rawpair/node)                 | Managed via NVM                                |
 | **[OCaml](https://ocaml.org/)**                          | [rawpair/ocaml](https://hub.docker.com/repository/docker/rawpair/ocaml)               | Includes OPAM, OCaml 4.14.1, Dune, Menhir      |
@@ -121,6 +125,16 @@ Inspect:
 
 `docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/ada:trixie -f ./ada/trixie/Dockerfile --push .`
 
+#### Chicken Scheme
+
+##### Debian Bookworm
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/chicken-scheme:bookworm -f ./chicken-scheme/bookworm/Dockerfile --push .`
+
+##### Debian Trixie
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/chicken-scheme:trixie -f ./chicken-scheme/trixie/Dockerfile --push .`
+
 #### Clojure
 
 ##### Temurin 21 - Debian Bookworm
@@ -143,6 +157,16 @@ Inspect:
 
 `docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/elixir:bookworm -f ./elixir/bookworm/Dockerfile --push .`
 
+#### Gambit Scheme
+
+##### Debian Bookworm
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/gambit-scheme:bookworm -f ./gambit-scheme/bookworm/Dockerfile --push .`
+
+##### Debian Trixie
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/gambit-scheme:trixie -f ./gambit-scheme/trixie/Dockerfile --push .`
+
 #### GNU COBOL
 
 ##### Debian Bookworm
@@ -152,6 +176,16 @@ Inspect:
 ##### Debian Trixie
 
 `docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/gnucobol:trixie -f ./gnucobol/trixie/Dockerfile --push .`
+
+#### GNU Guile
+
+##### Debian Bookworm
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/gnuguile:bookworm -f ./gnuguile/bookworm/Dockerfile --push .`
+
+##### Debian Trixie
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/gnuguile:trixie -f ./gnuguile/trixie/Dockerfile --push .`
 
 #### GNU Smalltalk - Ubuntu 24.04
 
@@ -176,6 +210,12 @@ Inspect:
 #### Metasploit Framework - 6.4.0
 
 `docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/metasploit:6.4.0 -f ./metasploit/6.4.0/Dockerfile --push .`
+
+#### MIT/GNU Scheme
+
+##### Debian Bookworm
+
+`docker buildx build --platform linux/amd64 -t rawpair/mit-gnu-scheme:bookworm -f ./mit-gnu-scheme/bookworm/Dockerfile --push .`
 
 #### Nim - Debian Trixie
 
