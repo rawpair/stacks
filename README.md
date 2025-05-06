@@ -72,6 +72,7 @@ The majority of the Docker images in this repo are available on https://hub.dock
 | **[OCaml](https://ocaml.org/)**                          | [rawpair/ocaml](https://hub.docker.com/repository/docker/rawpair/ocaml)               | Includes OPAM, OCaml 4.14.1, Dune, Menhir      |
 | **[PHP](https://www.php.net/)**                          | [rawpair-php](https://hub.docker.com/repository/docker/rawpair/php)                   | Includes FPM/CLI; PHP 8.0–8.3                  |
 | **[Python](https://www.python.org/)**                    | [rawpair/python](https://hub.docker.com/repository/docker/rawpair/python)             | 2 base images available: Trixie; NVIDIA CUDA   |
+| **[Racket](https://racket-lang.org/)**                   | [rawpair/racket](https://hub.docker.com/repository/docker/rawpair/racket)             |                                                |
 | **[Ruby](https://www.ruby-lang.org/en/)**                | [rawpair/ruby](https://hub.docker.com/repository/docker/rawpair/ruby)                 |                                                |
 | **[Rust](https://www.rust-lang.org/)**                   | [rawpair/rust](https://hub.docker.com/repository/docker/rawpair/rust)                 |                                                |
 | **[Smalltalk](https://www.gnu.org/software/smalltalk/)** | [rawpair/gnusmalltalk](https://hub.docker.com/repository/docker/rawpair/gnusmalltalk) | Includes GNU Smalltalk                         |
@@ -236,6 +237,10 @@ Inspect:
 #### Python - Debian Trixie
 
 `docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/python:trixie -f ./python/trixie/Dockerfile --push .`
+
+#### Racket - Debian Trixie
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/racket:trixie -f ./racket/trixie/Dockerfile --push .`
 
 #### Ruby - Debian Trixie
 
