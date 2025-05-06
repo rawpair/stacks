@@ -66,7 +66,7 @@ The majority of the Docker images in this repo are available on https://hub.dock
 | **[.NET](https://dotnet.microsoft.com/)**                | [rawpair/dotnet](https://hub.docker.com/repository/docker/rawpair/dotnet)             | Includes C#, F#, VB.NET, Mono                  |
 | **[Liberty Eiffel](https://www.liberty-eiffel.org/)**    | [rawpair/liberty-eiffel](https://hub.docker.com/repository/docker/rawpair/liberty-eiffel) | Compiled from [source](https://github.com/LibertyEiffel/Liberty) |
 | **[Metasploit](https://www.metasploit.com/)**            | [rawpair/metasploit](https://hub.docker.com/repository/docker/rawpair/metasploit)     | Metasploit Framework                           |
-| **[MIT/GNU Scheme](https://www.gnu.org/software/mit-gnu-scheme/)** | [rawpair/mit-gnu-scheme](https://hub.docker.com/repository/docker/rawpair/mit-gnu-scheme) |                                  |
+| **[MIT/GNU Scheme](https://www.gnu.org/software/mit-scheme/)** | [rawpair/mit-gnu-scheme](https://hub.docker.com/repository/docker/rawpair/mit-gnu-scheme) |                                  |
 | **[Nim](https://nim-lang.org/)**                         | [rawpair/nim](https://hub.docker.com/repository/docker/rawpair/nim)                   | Includes nimble                                |
 | **[Node.js](https://nodejs.org/)**                       | [rawpair/node](https://hub.docker.com/repository/docker/rawpair/node)                 | Managed via NVM                                |
 | **[OCaml](https://ocaml.org/)**                          | [rawpair/ocaml](https://hub.docker.com/repository/docker/rawpair/ocaml)               | Includes OPAM, OCaml 4.14.1, Dune, Menhir      |
