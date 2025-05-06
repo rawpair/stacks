@@ -275,12 +275,12 @@
         ]
     },
     {
-        "name": "MIT Scheme",
+        "name": "MIT/GNU Scheme",
         "tags": [
             {
-                "id": "mitscheme:bookworm",
+                "id": "mit-gnu-scheme:bookworm",
                 "base": "debian:bookworm-slim",
-                "name": "MIT Scheme on Debian Bookworm",
+                "name": "MIT/GNU Scheme on Debian Bookworm",
                 "platforms": [
                     "linux/amd64"
                 ]
