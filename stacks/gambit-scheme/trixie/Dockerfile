@@ -1,16 +1,17 @@
 # SPDX-License-Identifier: MPL-2.0
 
-FROM ubuntu:24.04
+FROM debian:trixie-slim
 
 # Base setup
 RUN apt-get update && apt-get install -y --no-install-recommends \
+    gambc \
+    make \
     bash \
     curl \
     libjson-c5 \
     libwebsockets19t64 \
     ca-certificates \
     libssl3 \
-    pkg-config \
     procps \
     tmux \
     vim \
@@ -19,23 +20,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     file \
     supervisor \
-    libsigsegv-dev \
-    libtool \
-    gawk \
-    libsigsegv2 \
-    bison \
-    flex \
-    texinfo \
-    zip \
-    unzip \
-    libffi-dev \
-    autoconf \
-    automake \
-    libltdl-dev \
-    make \
-    libc-bin \
-    locales \
-    libiconv-hook-dev \
+    gcc \
+    g++ \
+    xz-utils \
+    libc6-dev \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install ttyd (arch-aware)
@@ -54,26 +42,6 @@ RUN set -eux; \
 
 # Install Vector
 RUN curl --proto '=https' --tlsv1.2 -sSfL https://sh.vector.dev | bash -s -- -y --prefix /usr/local
-
-WORKDIR /usr/src
-
-RUN git clone https://git.savannah.gnu.org/git/smalltalk.git
-
-WORKDIR /usr/src/smalltalk
-
-RUN autoreconf --install --force
-RUN ./configure --prefix=/opt/smalltalk
-# Serialize make step as it tends to fail on arm64 otherwise
-RUN make -j1
-RUN make install
-
-ENV PATH="/opt/smalltalk/bin:$PATH"
-
-WORKDIR /usr/src
-
-RUN git clone https://github.com/timfel/JSON-st
-
-RUN gst-package JSON-st/package.xml
 
 # Create dev user and working directory
 RUN useradd -ms /bin/bash devuser

@@ -23,6 +23,29 @@
         ]
     },
     {
+        "name": "Chicken Scheme",
+        "tags": [
+            {
+                "id": "chicken-scheme:bookworm",
+                "base": "debian:bookworm-slim",
+                "name": "Chicken Scheme on Debian Bookworm",
+                "platforms": [
+                    "linux/amd64",
+                    "linux/arm64"
+                ]
+            },
+            {
+                "id": "chicken-scheme:trixie",
+                "base": "debian:trixie-slim",
+                "name": "Chicken Schemes on Debian Trixie",
+                "platforms": [
+                    "linux/amd64",
+                    "linux/arm64"
+                ]
+            }
+        ]
+    },
+    {
         "name": "Clojure",
         "tags": [
             {
@@ -99,6 +122,29 @@
         ]
     },
     {
+        "name": "Gambit Scheme",
+        "tags": [
+            {
+                "id": "gambit-scheme:bookworm",
+                "base": "debian:bookworm-slim",
+                "name": "Gambit Scheme on Debian Bookworm",
+                "platforms": [
+                    "linux/amd64",
+                    "linux/arm64"
+                ]
+            },
+            {
+                "id": "gambit-scheme:trixie",
+                "base": "debian:trixie-slim",
+                "name": "Gambit Schemes on Debian Trixie",
+                "platforms": [
+                    "linux/amd64",
+                    "linux/arm64"
+                ]
+            }
+        ]
+    },
+    {
         "name": "GNU COBOL",
         "tags": [
             {
@@ -114,6 +160,29 @@
                 "id": "gnucobol:trixie",
                 "base": "debian:trixie-slim",
                 "name": "GNU COBOL on Debian Trixie",
+                "platforms": [
+                    "linux/amd64",
+                    "linux/arm64"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "GNU Guile",
+        "tags": [
+            {
+                "id": "gnuguile:bookworm",
+                "base": "debian:bookworm-slim",
+                "name": "GNU Guile on Debian Bookworm",
+                "platforms": [
+                    "linux/amd64",
+                    "linux/arm64"
+                ]
+            },
+            {
+                "id": "gnuguile:trixie",
+                "base": "debian:trixie-slim",
+                "name": "GNU Guile on Debian Trixie",
                 "platforms": [
                     "linux/amd64",
                     "linux/arm64"
@@ -201,6 +270,19 @@
                 "platforms": [
                     "linux/amd64",
                     "linux/arm64"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "MIT Scheme",
+        "tags": [
+            {
+                "id": "mitscheme:bookworm",
+                "base": "debian:bookworm-slim",
+                "name": "MIT Scheme on Debian Bookworm",
+                "platforms": [
+                    "linux/amd64"
                 ]
             }
         ]
