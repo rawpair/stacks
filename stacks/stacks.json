@@ -87,6 +87,20 @@
         ]
     },
     {
+        "name": "CBQN",
+        "tags": [
+            {
+                "id": "cbqn:bookworm",
+                "base": "debian:bookworm-slim",
+                "name": "CBQN on Debian Bookworm",
+                "platforms": [
+                    "linux/amd64",
+                    "linux/arm64"
+                ]
+            }
+        ]
+    },
+    {
         "name": ".NET",
         "tags": [
             {

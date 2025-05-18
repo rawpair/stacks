@@ -56,6 +56,7 @@ The majority of the Docker images in this repo are available on https://hub.dock
 | **[Ada](https://www.gnu.org/software/gnat/)**            | [rawpair/ada](https://hub.docker.com/repository/docker/rawpair/ada)                   | Includes GNU GNAT                              |
 | **[Chicken Scheme](https://www.call-cc.org/)**           | [rawpair/chicken-scheme](https://hub.docker.com/repository/docker/rawpair/chicken-scheme) | Includes csi, csc, and chicken-install     |
 | **[Clojure](https://clojure.org/)**                      | [rawpair/clojure](https://hub.docker.com/repository/docker/rawpair/clojure)           | Runs on Temurin (OpenJDK)                      |
+| **[CBQN](https://github.com/dzaima/CBQN/)**              | [rawpair/cbqn](https://hub.docker.com/repository/docker/rawpair/cbqn)                 |                                                |
 | **[COBOL](https://gnucobol.sourceforge.io/)**            | [rawpair/gnucobol](https://hub.docker.com/repository/docker/rawpair/gnucobol)         | Includes GNU COBOL                             |
 | **[Elixir](https://elixir-lang.org/)**                   | [rawpair/elixir](https://hub.docker.com/repository/docker/rawpair/elixir)             | Includes Mix and Hex                           |
 | **[Gambit Scheme](https://gambitscheme.org/)**           | [rawpair/gambit-scheme](https://hub.docker.com/repository/docker/rawpair/gambit-scheme) | Includes gsi and gsc                         |
@@ -167,6 +168,12 @@ Inspect:
 ##### Debian Trixie
 
 `docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/gambit-scheme:trixie -f ./gambit-scheme/trixie/Dockerfile --push .`
+
+#### CBQN
+
+##### Debian Bookworm
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t rawpair/cbqn:bookworm -f ./cbqn/bookworm/Dockerfile --push .`
 
 #### GNU COBOL
 

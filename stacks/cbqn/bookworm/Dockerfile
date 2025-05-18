@@ -1,13 +1,14 @@
 # SPDX-License-Identifier: MPL-2.0
 
-FROM debian:trixie-slim
+FROM debian:bookworm-slim
 
 # Base setup
 RUN apt-get update && apt-get install -y --no-install-recommends \
     make \
+    bash \
     curl \
     libjson-c5 \
-    libwebsockets19t64 \
+    libwebsockets17 \
     ca-certificates \
     libssl3 \
     procps \
@@ -18,29 +19,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     file \
     supervisor \
-    gcc \
-    g++ \
-    xz-utils \
-    libc6-dev \
+    locales \
+    libffi-dev \
+    clang \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-ENV NIM_VERSION=2.2.4
-
-WORKDIR /opt/
-
-RUN curl -LO "https://nim-lang.org/download/nim-${NIM_VERSION}.tar.xz"
-RUN tar -xf nim-${NIM_VERSION}.tar.xz
-
-WORKDIR /opt/nim-${NIM_VERSION}
-
-RUN sh build.sh
-RUN bin/nim c koch
-RUN ./koch boot -d:release
-RUN ./koch tools
-
-RUN rm -f ../nim-${NIM_VERSION}.tar.xz
-
-WORKDIR /root
+ENV LANG C.UTF-8
+ENV LC_ALL C.UTF-8
 
 # Install ttyd (arch-aware)
 RUN set -eux; \
@@ -58,6 +43,16 @@ RUN set -eux; \
 
 # Install Vector
 RUN curl --proto '=https' --tlsv1.2 -sSfL https://sh.vector.dev | bash -s -- -y --prefix /usr/local
+
+WORKDIR /opt
+
+RUN git clone https://github.com/dzaima/CBQN.git /opt/cbqn
+
+WORKDIR /opt/cbqn
+
+RUN make o3
+
+ENV PATH="/opt/cbqn:$PATH"
 
 # Create dev user and working directory
 RUN useradd -ms /bin/bash devuser
@@ -100,9 +95,6 @@ ENV TERM=xterm \
     LOG_SESSION_ID=dev-session
 
 USER devuser
-
-ENV PATH="/opt/nim-2.2.4/bin:$PATH"
-
 EXPOSE 7681
 
 CMD ["supervisord", "-c", "/etc/supervisor/conf.d/rawpair.conf"]
