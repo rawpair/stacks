@@ -2,9 +2,6 @@
 
 FROM nvidia/cuda:12.8.1-cudnn-devel-ubuntu24.04
 
-# Non-interactive installation
-ENV DEBIAN_FRONTEND=noninteractive
-
 # Install system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python3 \
@@ -34,12 +31,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN set -eux; \
     ARCH=$(uname -m); \
     case "$ARCH" in \
-        x86_64)   BINARY="ttyd.x86_64" ;; \
-        aarch64)  BINARY="ttyd.aarch64" ;; \
-        armv7l)   BINARY="ttyd.armhf" ;; \
-        armv6l)   BINARY="ttyd.arm" ;; \
-        i686)     BINARY="ttyd.i686" ;; \
-        *)        echo "Unsupported architecture: $ARCH" >&2; exit 1 ;; \
+    x86_64)   BINARY="ttyd.x86_64" ;; \
+    aarch64)  BINARY="ttyd.aarch64" ;; \
+    armv7l)   BINARY="ttyd.armhf" ;; \
+    armv6l)   BINARY="ttyd.arm" ;; \
+    i686)     BINARY="ttyd.i686" ;; \
+    *)        echo "Unsupported architecture: $ARCH" >&2; exit 1 ;; \
     esac; \
     curl -L "https://github.com/tsl0922/ttyd/releases/download/1.7.7/${BINARY}" -o /usr/local/bin/ttyd; \
     chmod +x /usr/local/bin/ttyd
@@ -91,7 +88,7 @@ RUN pip3 install --no-cache-dir --break-system-packages \
 
 # Testing
 RUN pip3 install --no-cache-dir --break-system-packages \
-     pytest pytest-cov tox
+    pytest pytest-cov tox
 
 # Rich output & CLI toys
 RUN pip3 install --no-cache-dir --break-system-packages \
@@ -105,17 +102,17 @@ WORKDIR /home/devuser/app
 RUN chown devuser:devuser /home/devuser/app
 
 RUN mkdir -p \
-        /var/log \
-        /var/lib/vector \
-        /var/log/vector \
-        /var/run \
-        /home/devuser/run && \
+    /var/log \
+    /var/lib/vector \
+    /var/log/vector \
+    /var/run \
+    /home/devuser/run && \
     chown -R devuser:devuser \
-        /var/log \
-        /var/lib/vector \
-        /var/log/vector \
-        /var/run \
-        /home/devuser/run
+    /var/log \
+    /var/lib/vector \
+    /var/log/vector \
+    /var/run \
+    /home/devuser/run
 
 # Vector config
 COPY --chown=devuser:devuser vector.toml /etc/vector/vector.toml
