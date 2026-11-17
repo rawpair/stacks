@@ -2,6 +2,8 @@
 
 This repository provides official Docker images for development environments used with [RawPair](https://github.com/rawpair/rawpair). These stacks are designed for **collaborative, short-lived sessions**—where convenience matters more than minimalism.
 
+RawPair also runs native Linux workspaces through [Orqos](https://github.com/orqos-project/orqos). Native mode uses operator-installed or user-local toolchains and does not use this image catalog; see RawPair's [native setup](https://github.com/rawpair/rawpair/blob/main/docs/NATIVE_SETUP.md). Native equivalents of these stack images are not provided. This repository covers only the container images and requirements below, used by RawPair's Docker backend.
+
 Each image includes:
 - A **full toolchain** for a specific language (e.g., Elixir, Ada, Prolog)
 - **Sane defaults** and ready-to-use configuration
